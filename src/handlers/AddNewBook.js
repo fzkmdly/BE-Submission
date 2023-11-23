@@ -4,7 +4,7 @@ const {
   getSuccessResponseWithMsgAndData
 } = require('../utils/response.js');
 
-const addNewBook = async () => {
+const addNewBook = async (request, h) => {
   const {
     name,
     year,
@@ -18,7 +18,7 @@ const addNewBook = async () => {
 
   if (!name || readPage > pageCount) {
     const message = !name ?
-      'Gagal menambahkan buku. Mohon isi buku terlebih dahulu' :
+      'Gagal menambahkan buku. Mohon isi nama buku' :
       'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount';
     return getFailedResponseWithMessage(h, message, 400);
   }
@@ -50,10 +50,9 @@ const addNewBook = async () => {
     insertedAt: currentISODate,
     updatedAt: currentISODate,
   };
-
-  books.push(newBook);
-
-  if (books.length > newLength) {
+  
+  const newLength = books.push(newBook);
+  if (books.length === newLength) {
     return getSuccessResponseWithMsgAndData(h, 'Buku berhasil ditambahkan', { bookId: id }, 201);
   }
 
