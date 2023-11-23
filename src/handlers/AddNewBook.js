@@ -1,8 +1,8 @@
-import books from "../books";
-import {
+const books = require('../books');
+const {
   getFailedResponseWithMessage,
   getSuccessResponseWithMsgAndData
-} from '../utils/response.js';
+} = require('../utils/response.js');
 
 const addNewBook = async () => {
   const {
@@ -60,4 +60,4 @@ const addNewBook = async () => {
   return getFailedResponseWithMessage(h, 'Catatan gagal ditambahkan', 500);
 };
 
-export default addNewBook;
+module.exports = addNewBook;

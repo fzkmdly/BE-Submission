@@ -1,8 +1,9 @@
-import addNewBook from "./handlers/AddNewBook";
-import getAllBooksHandler from "./handlers/getAllBook";
-import getBookByIdHandler from "./handlers/getBookbyId";
-import updateBookByIdHandler from "./handlers/updateBook";
-import deleteBookByIdHandler from "./handlers/deleteBook";
+const addNewBook = require("./handlers/AddNewBook");
+const getAllBooksHandler = require("./handlers/getAllBook");
+const getBookByIdHandler = require("./handlers/getBookbyId");
+const updateBookByIdHandler = require("./handlers/updateBook");
+const deleteBookByIdHandler = require("./handlers/deleteBook");
+
 
 const routes = [
   {
@@ -32,4 +33,4 @@ const routes = [
   },
 ];
 
-export default routes;
+module.exports =  routes;

@@ -1,5 +1,5 @@
-import books from '../books';
-import { getFailedResponseWithMessage, getSuccessResponseWithMessage } from '../utils/response';
+const books = require('../books');
+const { getFailedResponseWithMessage, getSuccessResponseWithMessage } = require('../utils/response');
 
 const findBookIndexById = (bookId) => {
   return books.findIndex((book) => book.id === bookId);
@@ -20,4 +20,4 @@ const deleteBookByIdHandler = (request, h) => {
   return getSuccessResponseWithMessage(h, 'Buku berhasil dihapus');
 };
 
-export default deleteBookByIdHandler;
+module.exports = deleteBookByIdHandler;

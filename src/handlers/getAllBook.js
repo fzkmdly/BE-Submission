@@ -1,5 +1,5 @@
-import books from '../books';
-import { getSuccessResponseWithData } from '../utils/response';
+const books = require('../books');
+const { getSuccessResponseWithData } = require('../utils/response');
 
 const getAllBooksHandler = (request, h) => {
   const { name, reading, finished } = request.query;
@@ -27,4 +27,4 @@ const getFilteredBooks = (filterFunction = () => true) => {
   }));
 };
 
-export default getAllBooksHandler;
+module.exports = getAllBooksHandler;

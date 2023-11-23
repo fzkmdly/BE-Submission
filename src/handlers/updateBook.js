@@ -1,8 +1,8 @@
-import books from '../books';
-import {
+const books = require('../books');
+const {
   getFailedResponseWithMessage,
   getSuccessResponseWithMessage,
-} from '../utils/response';
+} = require('../utils/response');
 
 const updateBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
@@ -51,4 +51,4 @@ const updateBookByIdHandler = (request, h) => {
 
 const findBookIndexById = (bookId) => books.findIndex((book) => book.id === bookId);
 
-export default updateBookByIdHandler;
+module.exports = updateBookByIdHandler;

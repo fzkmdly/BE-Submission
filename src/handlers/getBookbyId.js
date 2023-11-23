@@ -1,5 +1,5 @@
-import books from '../books';
-import { getFailedResponseWithMessage, getSuccessResponseWithData } from '../utils/response';
+const books = require('../books');
+const { getFailedResponseWithMessage, getSuccessResponseWithData } = require('../utils/response');
 
 const getBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
@@ -14,4 +14,4 @@ const getBookByIdHandler = (request, h) => {
 
 const findBookById = (bookId) => books.find((book) => book.id === bookId) || null;
 
-export default getBookByIdHandler;
+module.exports =getBookByIdHandler;
