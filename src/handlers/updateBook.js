@@ -28,7 +28,7 @@ const updateBookByIdHandler = (request, h) => {
 
   if (bookIndex === -1) {
     return getFailedResponseWithMessage(
-      h, 'Gagal memperbarui buku. Id tidak dapat ditemukan', 404
+      h, 'Gagal memperbarui buku. Id tidak ditemukan', 404
     );
   }
 
@@ -46,7 +46,7 @@ const updateBookByIdHandler = (request, h) => {
     updatedAt,
   };
 
-  return getSuccessResponseWithMessage(h, 'Buku sudah diperbaharui');
+  return getSuccessResponseWithMessage(h, 'Buku berhasil diperbarui');
 };
 
 const findBookIndexById = (bookId) => books.findIndex((book) => book.id === bookId);
